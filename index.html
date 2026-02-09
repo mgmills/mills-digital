@@ -5,11 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mills-Digital</title>
 
+  <!-- Pixel font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
+  <!-- Your shared stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Terminal styling (kept in index.html so you don't have to touch style.css) */
+    #terminal {
+      text-align: left;
+      font-size: clamp(12px, 1.6vw, 14px);
+      line-height: 1.7;
+      letter-spacing: 0.3px;
+      margin: 0 0 14px;
+      min-width: min(720px, 82vw);
+      max-width: min(720px, 82vw);
+    }
+    .termline {
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 2px 0;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      transform: translateY(1px);
+      animation: blink 0.85s steps(1) infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* Make the logo sit nicely above the terminal */
+    .logo { margin-bottom: 12px; }
+    .sub { margin-top: 14px; }
+  </style>
 </head>
 
 <body class="retro">
@@ -23,15 +56,16 @@
         <span class="blue">Mills-</span><span class="pink">Digital</span>
       </h1>
 
-      <a class="cta" href="home.html" id="playLink">Shall we play a game?</a>
+      <div id="terminal" aria-label="Terminal boot sequence"></div>
 
-      <p class="sub">Click to enter • retro mode enabled</p>
+      <a class="cta" href="home.html" id="playLink" style="display:none;">Shall we play a game?</a>
+      <p class="sub" id="hint" style="display:none;">Click to enter • retro mode enabled</p>
     </section>
   </main>
 
   <script>
-    // Tiny "beep" on click (no files needed)
-    document.getElementById("playLink").addEventListener("click", () => {
+    // Tiny "beep" on click (no audio file needed)
+    function beep() {
       try {
         const ctx = new (window.AudioContext || window.webkitAudioContext)();
         const o = ctx.createOscillator();
@@ -43,7 +77,81 @@
         o.start();
         setTimeout(() => { o.stop(); ctx.close(); }, 70);
       } catch {}
-    });
+    }
+
+    // Terminal typing effect
+    const terminal = document.getElementById("terminal");
+
+    // You can edit these lines anytime
+    const lines = [
+      "MILLS-DIGITAL BIOS v1.0",
+      "Initializing systems...",
+      "Loading automation modules...",
+      "Calibrating signal...",
+      "Establishing uplink...",
+      "READY."
+    ];
+
+    // Timing knobs
+    const CHAR_DELAY_MS = 26;
+    const LINE_DELAY_MS = 420;
+
+    let lineIndex = 0;
+
+    function addLineContainer() {
+      const div = document.createElement("div");
+      div.className = "termline";
+      terminal.appendChild(div);
+      return div;
+    }
+
+    function typeText(div, text, done) {
+      let i = 0;
+
+      // cursor element (blinks)
+      const cursor = document.createElement("span");
+      cursor.className = "cursor";
+      cursor.textContent = "█";
+      div.appendChild(cursor);
+
+      function tick() {
+        if (i < text.length) {
+          // insert next character before cursor
+          cursor.insertAdjacentText("beforebegin", text.charAt(i));
+          i++;
+          setTimeout(tick, CHAR_DELAY_MS);
+        } else {
+          // done typing this line; remove cursor from this line
+          cursor.remove();
+          done();
+        }
+      }
+
+      tick();
+    }
+
+    function boot() {
+      if (lineIndex >= lines.length) {
+        // show the CTA button after boot completes
+        const playLink = document.getElementById("playLink");
+        const hint = document.getElementById("hint");
+        playLink.style.display = "inline-block";
+        hint.style.display = "block";
+        return;
+      }
+
+      const div = addLineContainer();
+      typeText(div, lines[lineIndex], () => {
+        lineIndex++;
+        setTimeout(boot, LINE_DELAY_MS);
+      });
+    }
+
+    // Start boot sequence
+    boot();
+
+    // Beep on click
+    document.getElementById("playLink").addEventListener("click", () => beep());
   </script>
 </body>
 </html>
