@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mills Digital — Home</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="basic">
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">Mills Digital</div>
+      <nav class="nav">
+        <a href="home.html" class="active">Home</a>
+        <a href="index.html">Retro Door</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap content">
+    <h1>Welcome</h1>
+    <p>
+      This is the “normal” side of the site. For now it’s minimal and fun—later we’ll polish it into a true MSP / electrical business site.
+    </p>
+
+    <div class="card">
+      <h2>What’s coming</h2>
+      <ul>
+        <li>Projects & experiments</li>
+        <li>Automation demos</li>
+        <li>Contact page</li>
+        <li>Eventually: full business site</li>
+      </ul>
+    </div>
+
+    <p class="hint">
+      Tip: You can add more pages later (about.html, projects.html, contact.html) without changing the retro landing at all.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">© <span id="y"></span> Mills Digital</div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

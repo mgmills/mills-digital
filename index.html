@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mills-Digital</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="retro">
+  <div class="stars"></div>
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+
+  <main class="center">
+    <section class="panel">
+      <h1 class="logo" aria-label="Mills-Digital">
+        <span class="blue">Mills-</span><span class="pink">Digital</span>
+      </h1>
+
+      <a class="cta" href="home.html" id="playLink">Shall we play a game?</a>
+
+      <p class="sub">Click to enter • retro mode enabled</p>
+    </section>
+  </main>
+
+  <script>
+    // Tiny "beep" on click (no files needed)
+    document.getElementById("playLink").addEventListener("click", () => {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.type = "square";
+        o.frequency.value = 880;
+        g.gain.value = 0.04;
+        o.connect(g); g.connect(ctx.destination);
+        o.start();
+        setTimeout(() => { o.stop(); ctx.close(); }, 70);
+      } catch {}
+    });
+  </script>
+</body>
+</html>

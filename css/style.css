@@ -1,0 +1,163 @@
+:root {
+  --bg: #05060a;
+  --blue: #3ea6ff;
+  --pink: #ff4fd8;
+  --text: #101318;
+  --muted: rgba(255,255,255,.75);
+  --card: #ffffff;
+  --border: rgba(0,0,0,.12);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; }
+
+/* ---------- Retro landing ---------- */
+body.retro {
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  background: radial-gradient(1200px 600px at 50% 35%, #0c1230 0%, var(--bg) 55%, #000 100%);
+  color: white;
+  overflow: hidden;
+  image-rendering: pixelated;
+}
+
+.center {
+  position: relative;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.panel {
+  display: inline-block;
+  padding: 18px 18px 16px;
+  border: 2px solid rgba(255,255,255,.22);
+  background: rgba(0,0,0,.35);
+  box-shadow: 0 0 0 6px rgba(255,255,255,.04);
+  border-radius: 10px;
+  max-width: 900px;
+}
+
+.logo {
+  margin: 0 0 22px;
+  font-size: clamp(22px, 4vw, 46px);
+  line-height: 1.35;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(62,166,255,.25), 0 0 14px rgba(255,79,216,.18);
+}
+.logo .blue { color: var(--blue); }
+.logo .pink { color: var(--pink); }
+
+a.cta {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-size: clamp(12px, 2.2vw, 16px);
+  padding: 14px 16px;
+  border: 2px solid rgba(255,255,255,.35);
+  background: linear-gradient(180deg, rgba(62,166,255,.18), rgba(255,79,216,.10));
+  box-shadow: 0 10px 0 rgba(0,0,0,.35);
+  transition: transform .08s ease, filter .15s ease, border-color .15s ease;
+}
+a.cta:hover {
+  border-color: rgba(255,255,255,.6);
+  filter: drop-shadow(0 0 10px rgba(62,166,255,.25)) drop-shadow(0 0 10px rgba(255,79,216,.18));
+}
+a.cta:active { transform: translateY(6px); box-shadow: 0 4px 0 rgba(0,0,0,.35); }
+
+.sub {
+  margin: 12px 0 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* starfield */
+.stars::before,
+.stars::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.9) 50%, transparent 51%),
+    radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,.7) 50%, transparent 51%),
+    radial-gradient(1px 1px at 55% 40%, rgba(255,255,255,.6) 50%, transparent 51%),
+    radial-gradient(1px 1px at 75% 65%, rgba(255,255,255,.8) 50%, transparent 51%),
+    radial-gradient(1px 1px at 90% 15%, rgba(255,255,255,.5) 50%, transparent 51%),
+    radial-gradient(1px 1px at 15% 55%, rgba(255,255,255,.6) 50%, transparent 51%);
+  background-size: 260px 260px;
+  opacity: .45;
+  animation: drift 18s linear infinite;
+  pointer-events: none;
+}
+.stars::after { background-size: 420px 420px; opacity: .25; animation-duration: 28s; }
+@keyframes drift { from { transform: translate3d(0,0,0); } to { transform: translate3d(180px,120px,0); } }
+
+.scanlines {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(to bottom,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.06) 1px,
+    rgba(0,0,0,0) 3px,
+    rgba(0,0,0,0) 6px
+  );
+  mix-blend-mode: overlay;
+  opacity: .25;
+  pointer-events: none;
+}
+.vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.55) 80%, rgba(0,0,0,.85) 100%);
+  pointer-events: none;
+}
+
+/* ---------- Basic “normal” page ---------- */
+body.basic {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: #f5f7fb;
+}
+
+.wrap { width: min(980px, 92vw); margin: 0 auto; }
+
+.topbar {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+.brand { font-weight: 700; letter-spacing: .2px; }
+.nav a {
+  text-decoration: none;
+  color: #2b3440;
+  margin-left: 14px;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.nav a:hover { background: rgba(0,0,0,.05); }
+.nav a.active { background: rgba(62,166,255,.12); }
+
+.content { padding: 28px 0 40px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 18px 10px;
+  margin: 18px 0;
+}
+.hint { opacity: .75; }
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
+  color: #516172;
+  background: white;
+}
