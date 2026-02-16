@@ -1,58 +1,502 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mills Digital — Home</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mills Digital — Infrastructure & Automation Consulting</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <link rel="stylesheet" href="css/style.css" />
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+  background: #ffffff;
+}
+
+.topbar {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 1rem 0;
+  border-bottom: 3px solid #2874a6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.topbar .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: #2874a6;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #34495e 100%);
+  color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero .tagline {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #ecf0f1;
+  max-width: 700px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: #2874a6;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #1f5a83;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+.content {
+  padding: 3rem 2rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 2.5rem;
+  max-width: 800px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.card p {
+  color: #555;
+  line-height: 1.7;
+}
+
+.card ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.card ul li {
+  padding: 0.5rem 0;
+  color: #555;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.card ul li:last-child {
+  border-bottom: none;
+}
+
+.card ul li:before {
+  content: "→ ";
+  color: #2874a6;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.expertise {
+  background: #f8f9fa;
+  padding: 3rem 2rem;
+  margin: 0 -2rem;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.expertise-item {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border-left: 4px solid #2874a6;
+}
+
+.expertise-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.expertise-item p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.cta-section {
+  background: #2874a6;
+  color: #ffffff;
+  padding: 3rem 2rem;
+  margin: 3rem -2rem 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #ecf0f1;
+}
+
+.footer {
+  background: #1a1a1a;
+  color: #ecf0f1;
+  padding: 2.5rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  color: #2874a6;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: #bdc3c7;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #2874a6;
+}
+
+.footer-bottom {
+  border-top: 1px solid #34495e;
+  padding-top: 1.5rem;
+  text-align: center;
+  color: #95a5a6;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    gap: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero .tagline {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
+<body>
+<header class="topbar">
+<div class="wrap">
+<div class="brand">Mills Digital</div>
+<nav class="nav">
+<a href="#" class="active">Home</a>
+<a href="#services">Services</a>
+<a href="#expertise">Expertise</a>
+<a href="index.html">Portal</a>
+</nav>
+</div>
+</header>
 
-<body class="basic">
-  <header class="topbar">
-    <div class="wrap">
-      <div class="brand">Mills Digital</div>
-      <nav class="nav">
-        <a href="home.html" class="active">Home</a>
-        <a href="index.html">Retro Portal</a>
-      </nav>
-    </div>
-  </header>
+<section class="hero">
+<div class="wrap">
+<h1>Infrastructure & Automation Solutions for Growing Businesses</h1>
+<p class="tagline">Professional IT consulting focused on enterprise automation, infrastructure management, and systems optimization.</p>
+<div class="hero-buttons">
+<a href="#services" class="btn btn-primary">View Services</a>
+<a href="https://github.com/mgmills" target="_blank" class="btn btn-secondary">View Projects</a>
+</div>
+</div>
+</section>
 
-  <main class="wrap content">
+<main class="wrap content">
+<section class="section" id="services">
+<h2 class="section-title">Services</h2>
+<p class="section-subtitle">Specialized solutions for infrastructure automation, systems management, and enterprise IT operations</p>
 
-    <h1>Welcome</h1>
+<div class="services-grid">
+<div class="card">
+<h3>Automation & Orchestration</h3>
+<p>Enterprise automation solutions using Ansible and modern orchestration tools to streamline operations and reduce manual workload.</p>
+<ul>
+<li>Ansible playbook development</li>
+<li>Infrastructure as Code</li>
+<li>Configuration management</li>
+<li>Automated patch management</li>
+</ul>
+</div>
 
-    <p>
-      Website under construction — but feel free to poke around.
-    </p>
+<div class="card">
+<h3>Infrastructure Management</h3>
+<p>Comprehensive server and systems management for mixed Linux and Windows environments, optimized for reliability and performance.</p>
+<ul>
+<li>Linux server administration (RHEL/CentOS)</li>
+<li>Windows server management</li>
+<li>VMware infrastructure</li>
+<li>System monitoring & health checks</li>
+</ul>
+</div>
 
-    <div class="card">
-      <h2>While you're here</h2>
-      <ul>
-        <li><a href="index.html">Return to Retro Entry Portal</a></li>
-        <li><a href="https://github.com/mgmills" target="_blank">View My GitHub Projects</a></li>
-      </ul>
-    </div>
+<div class="card">
+<h3>MSP Services</h3>
+<p>Managed service provider capabilities for small and medium businesses seeking reliable, professional IT support and infrastructure management.</p>
+<ul>
+<li>Remote infrastructure monitoring</li>
+<li>Proactive system maintenance</li>
+<li>Security & compliance</li>
+<li>Backup & disaster recovery</li>
+</ul>
+</div>
+</div>
+</section>
 
-    <div class="card">
-      <h2>Coming Soon</h2>
-      <ul>
-        <li>Automation Projects</li>
-        <li>Infrastructure Work</li>
-        <li>MSP Services</li>
-        <li>Electrical Division</li>
-      </ul>
-    </div>
+<section class="expertise" id="expertise">
+<div class="wrap">
+<h2 class="section-title">Technical Expertise</h2>
+<p class="section-subtitle">Deep experience across enterprise infrastructure, automation platforms, and security tools</p>
 
-  </main>
+<div class="expertise-grid">
+<div class="expertise-item">
+<h4>Automation Platforms</h4>
+<p>Ansible Automation Platform, Event-Driven Ansible, Execution Environments, Playbook Development</p>
+</div>
 
-  <footer class="footer">
-    <div class="wrap">© <span id="y"></span> Mills Digital</div>
-  </footer>
+<div class="expertise-item">
+<h4>Operating Systems</h4>
+<p>Red Hat Enterprise Linux 7-10, CentOS, Windows Server, VMware ESXi</p>
+</div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<div class="expertise-item">
+<h4>Security Tools</h4>
+<p>SentinelOne, Rapid7 Insight, BigFix, CentrifyDC Active Directory Integration</p>
+</div>
+
+<div class="expertise-item">
+<h4>Infrastructure</h4>
+<p>VMware vSphere, Docker, System Integration, Disk Management, Snapshot Automation</p>
+</div>
+
+<div class="expertise-item">
+<h4>Scripting & Development</h4>
+<p>Bash, Python, PowerShell, YAML, Infrastructure as Code</p>
+</div>
+
+<div class="expertise-item">
+<h4>Enterprise Tools</h4>
+<p>Patch Management, Certificate Management, Monitoring Solutions, Cloud Platforms</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Current Focus</h2>
+<p class="section-subtitle">Active projects and ongoing development initiatives</p>
+
+<div class="services-grid">
+<div class="card">
+<h3>Automation Projects</h3>
+<p>Building enterprise-grade automation solutions for infrastructure management, patch deployment, and system orchestration.</p>
+</div>
+
+<div class="card">
+<h3>Infrastructure Work</h3>
+<p>System migrations, compliance initiatives, and infrastructure modernization for enterprise environments.</p>
+</div>
+
+<div class="card">
+<h3>Professional Development</h3>
+<p>Currently pursuing Red Hat Certified Engineer (RHCE) certification and expanding cloud infrastructure expertise.</p>
+</div>
+</div>
+</section>
+</main>
+
+<section class="cta-section">
+<div class="wrap">
+<h2>Ready to Discuss Your Infrastructure Needs?</h2>
+<p>Let's talk about how automation and professional infrastructure management can benefit your business.</p>
+<a href="mailto:contact@millsdigital.com" class="btn btn-secondary">Get In Touch</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="wrap">
+<div class="footer-content">
+<div class="footer-section">
+<h4>Mills Digital</h4>
+<p>Professional infrastructure and automation consulting for businesses that want reliable, efficient IT operations.</p>
+</div>
+
+<div class="footer-section">
+<h4>Services</h4>
+<ul>
+<li><a href="#services">Automation & Orchestration</a></li>
+<li><a href="#services">Infrastructure Management</a></li>
+<li><a href="#services">MSP Services</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h4>Resources</h4>
+<ul>
+<li><a href="https://github.com/mgmills" target="_blank">GitHub Projects</a></li>
+<li><a href="index.html">Retro Portal</a></li>
+<li><a href="#expertise">Technical Expertise</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h4>Connect</h4>
+<ul>
+<li><a href="mailto:contact@millsdigital.com">Email</a></li>
+<li><a href="https://github.com/mgmills" target="_blank">GitHub</a></li>
+</ul>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>&copy; <span id="y"></span> Mills Digital. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
