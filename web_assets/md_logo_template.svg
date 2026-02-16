@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1290 843" width="1290" height="843">
+  <title>Mills Digital Logo</title>
+  
+  <!-- 
+    This is a SIMPLIFIED SVG template for the Mills Digital logo.
+    
+    For a professional vector version, please use one of these methods:
+    1. Adobe Illustrator's Image Trace feature
+    2. Online vectorization tools (vectorizer.io, vectormagic.com)
+    3. Inkscape's Trace Bitmap feature
+    
+    Those tools will accurately trace all the gradients, curves, and details
+    from your original PNG logo to create a true scalable vector.
+    
+    This template serves as a placeholder showing the basic structure.
+  -->
+  
+  <!-- Background (transparent) -->
+  <rect width="1290" height="843" fill="none"/>
+  
+  <!-- This would contain the traced paths of your logo -->
+  <!-- Professional vectorization will create accurate paths for: -->
+  <!-- - The "M" letter shape with gradients -->
+  <!-- - The "MILLS" text -->
+  <!-- - The "DIGITAL" text -->
+  <!-- - All curves, swooshes, and pixel elements -->
+  
+  <!-- Placeholder text -->
+  <text x="645" y="421" text-anchor="middle" font-family="Arial, sans-serif" 
+        font-size="48" fill="#2C3E50" font-weight="bold">
+    Mills Digital
+  </text>
+  
+  <text x="645" y="471" text-anchor="middle" font-family="Arial, sans-serif" 
+        font-size="24" fill="#4A90A4">
+    [Vectorized logo placeholder - Use professional tools for accurate conversion]
+  </text>
+</svg>

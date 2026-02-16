@@ -1,0 +1,127 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    MILLS DIGITAL LOGO - QUICK REFERENCE                   ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+📦 PACKAGE CONTENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ 6 PNG Logo Sizes (all with transparent background)
+   • md_logo_transparent.png  (1290×843)  Original with transparency
+   • md_logo_full.png         (1290×843)  Optimized full-size
+   • md_logo_large.png        (800×523)   Hero sections
+   • md_logo_medium.png       (400×261)   Headers/Navigation  ⭐ MOST USED
+   • md_logo_small.png        (200×131)   Mobile headers
+   • md_logo_thumbnail.png    (100×65)    Footers/thumbnails
+
+✅ 6 Favicon Files
+   • favicon.ico              Multi-size (16,32,48)
+   • favicon_16x16.png        Browser tabs
+   • favicon_32x32.png        Browser tabs (retina)
+   • favicon_64x64.png        Windows taskbar
+   • favicon_128x128.png      Chrome Web Store
+   • favicon_256x256.png      Apple touch icon
+
+✅ Documentation & Demos
+   • README.md               Complete usage guide
+   • demo.html               Live demo page
+   • md_logo_template.svg    SVG template
+   • README_SVG.txt          SVG conversion guide
+   • QUICK_REFERENCE.txt     This file
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ QUICK START
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. For website header:
+   <img src="md_logo_medium.png" alt="Mills Digital">
+
+2. For mobile header:
+   <img src="md_logo_small.png" alt="Mills Digital">
+
+3. For favicon (in <head>):
+   <link rel="icon" href="favicon.ico">
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon_32x32.png">
+
+4. Open demo.html in browser to see all examples
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎨 BRAND COLORS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Navy Blue:  #2C3E50  (main logo color)
+Teal Blue:  #4A90A4  (accent)
+Cyan:       #5DADE2  (highlights)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📏 SIZE RECOMMENDATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Context              File                    Display Width
+─────────────────────────────────────────────────────────────────────────
+Desktop Header       md_logo_medium.png      200-400px
+Mobile Header        md_logo_small.png       150-200px
+Hero Section         md_logo_large.png       400-800px
+Footer              md_logo_thumbnail.png    80-150px
+Email Signature     md_logo_small.png        150-250px
+Social Media        md_logo_medium.png       400px
+Business Cards      md_logo_full.png         Full resolution
+Print Materials     md_logo_full.png         Full resolution
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ FEATURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Transparent background (works on any color)
+✓ Optimized file sizes (total: 356 KB)
+✓ High-quality PNG exports
+✓ Multiple sizes for responsive design
+✓ Complete favicon package
+✓ Web-ready and optimized
+✓ Maintains aspect ratio
+✓ Browser compatible (all modern browsers + IE11+)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📱 RESPONSIVE HTML EXAMPLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+<picture>
+  <source media="(max-width: 480px)" srcset="md_logo_small.png">
+  <source media="(max-width: 768px)" srcset="md_logo_medium.png">
+  <img src="md_logo_large.png" alt="Mills Digital" style="max-width: 100%;">
+</picture>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔄 NEED SVG VERSION?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For best results, vectorize the logo using:
+• Online: vectorizer.io, vectormagic.com
+• Desktop: Adobe Illustrator (Image Trace)
+• Free: Inkscape (Trace Bitmap)
+
+See README_SVG.txt for detailed instructions.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 TIPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• Always specify width and height to prevent layout shift
+• Use appropriate size - don't load large images for small displays
+• Consider lazy loading for below-the-fold logos
+• Test on dark backgrounds (transparency is working!)
+• Keep original files backed up
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Created: February 2026
+For: Mills Digital
+Version: 1.0
+
+Need help? Check README.md for complete documentation.
