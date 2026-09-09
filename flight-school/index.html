@@ -221,6 +221,49 @@ body {
 .safety-card h4 { color: var(--abyss); margin-bottom: .4rem; font-size: 1.04rem; font-weight: 700; }
 .safety-card p { color: #51606d; font-size: .94rem; }
 
+/* Crew / instructors */
+.crew-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.8rem; margin-bottom: 2.2rem; }
+.crew {
+  background: #fff; border: 1px solid var(--line); border-radius: 18px;
+  overflow: hidden; box-shadow: 0 2px 14px rgba(7,59,82,.07);
+  display: flex; flex-direction: column;
+}
+.crew-photo { aspect-ratio: 4 / 3; background: #e2eff4; }
+.crew-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
+.crew-body { padding: 1.6rem 1.7rem 1.8rem; }
+.crew h3 { font-size: 1.3rem; color: var(--abyss); font-weight: 800; letter-spacing: -.01em; }
+.crew .role {
+  color: var(--ocean); font-weight: 700; font-size: .76rem; letter-spacing: .12em;
+  text-transform: uppercase; margin: .2rem 0 .9rem;
+}
+.crew p { color: #51606d; font-size: .95rem; margin-bottom: .75rem; }
+.crew p:last-child { margin-bottom: 0; }
+.crew a { color: var(--ocean); font-weight: 600; }
+
+/* Friends-since band */
+.together {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch;
+  background: #fff; border: 1px solid var(--line); border-radius: 18px;
+  overflow: hidden; margin-bottom: 2.2rem;
+}
+.together img { width: 100%; height: 100%; min-height: 250px; object-fit: cover; display: block; }
+.together-copy { padding: 2rem 2.2rem; display: flex; flex-direction: column; justify-content: center; }
+.together-copy h3 { font-size: 1.35rem; color: var(--abyss); font-weight: 800; margin-bottom: .6rem; letter-spacing: -.01em; }
+.together-copy p { color: #51606d; font-size: .95rem; margin-bottom: .7rem; }
+.together-copy p:last-child { margin-bottom: 0; }
+
+/* Assurance list */
+.assure { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--coral); border-radius: 12px; padding: 1.7rem 1.8rem; }
+.assure ul { list-style: none; margin: .4rem 0 1rem; }
+.assure li { padding: .45rem 0; border-bottom: 1px dashed var(--line); font-size: .95rem; }
+.assure li:last-child { border-bottom: none; }
+.assure-note { color: #51606d; font-size: .92rem; }
+
+@media (max-width: 760px) {
+  .together { grid-template-columns: 1fr; }
+  .together img { min-height: 220px; }
+}
+
 /* FAQ */
 .faq { max-width: 760px; }
 .faq details {
@@ -282,6 +325,7 @@ Joe's Flight School
 <a href="#the-sport">The Sport</a>
 <a href="#lessons">Lessons</a>
 <a href="#first-flight">First Flight</a>
+<a href="#crew">Who We Are</a>
 <a href="#faq">FAQ</a>
 <a href="#book" class="cta">Book a session</a>
 </nav>
@@ -451,6 +495,61 @@ Joe's Flight School
 <p>The throttle is wirelessly tethered to the rider. Separate from the board and the motor stops immediately.</p>
 </div>
 </div>
+</div>
+</section>
+
+
+<!-- CREW -->
+<section class="section" id="crew">
+<div class="wrap">
+<div class="eyebrow-sm">Who you're riding with</div>
+<h2 class="section-title">Two friends who never got over the water</h2>
+<p class="section-sub">An eFoil lesson means trusting a stranger with a powered board in open water. Who's holding the other end of that matters, so here's exactly who we are.</p>
+
+<div class="crew-grid">
+
+<div class="crew">
+<div class="crew-photo"><img src="/images/flight-school/joe-headshot.jpg" alt="Joe Brittingham, founder and lead instructor at Joe's Flight School"></div>
+<div class="crew-body">
+<h3>Joe Brittingham</h3>
+<div class="role">Founder &amp; lead instructor</div>
+<p>Joe's other life is financial planning — he's a CERTIFIED FINANCIAL PLANNER&trade; and runs <a href="https://www.brittinghamfinancialgroup.com/" rel="noopener">Brittingham Financial Group</a> in Pismo Beach. A career spent being the person people hand the things they can't afford to get wrong <span class="tbd">TODO: confirm years in practice</span>. Same instinct, different element.</p>
+<p><span class="tbd">TODO: Joe's water background — years on the water, where he learned to foil, other board sports</span></p>
+<p>Every session on the schedule is taught by Joe himself. <span class="tbd">TODO: confirm — only instructor at launch?</span></p>
+</div>
+</div>
+
+<div class="crew">
+<div class="crew-photo"><img src="/images/flight-school/mike-headshot.jpg" alt="Mike Mills, partner at Joe's Flight School"></div>
+<div class="crew-body">
+<h3>Mike Mills</h3>
+<div class="role">Partner &amp; operations</div>
+<p>Mike runs everything that isn't on the water — booking, scheduling, gear logistics and this site. His day job is <a href="/">Mills Digital</a>, an infrastructure and automation shop, which mostly means he is constitutionally incapable of letting a booking fall through a crack.</p>
+<p><span class="tbd">TODO: Mike's water background — time on the water, and whether he instructs too or stays on the beach</span></p>
+</div>
+</div>
+
+</div>
+
+<div class="together">
+<img src="/images/flight-school/mike-joe-5th-grade.jpg" alt="Joe and Mike as kids, fifth grade">
+<div class="together-copy">
+<h3>We've been at this since the fifth grade</h3>
+<p>That's us up there in <span class="tbd">TODO: confirm year</span>, and <span class="tbd">TODO: which two are Joe and Mike?</span>. The venue has changed and the toys got a lot faster, but it's the same two people.</p>
+<p>That's also why we're careful with it. Neither of us wants to be the one who put his oldest friend's name on a bad afternoon.</p>
+</div>
+</div>
+
+<div class="assure">
+<div class="eyebrow-sm">Before you get in the water</div>
+<ul>
+<li><span class="tbd">TODO: instructor certifications — CPR, first aid, lifeguard, boater safety</span></li>
+<li><span class="tbd">TODO: liability insurance — carrier and coverage</span></li>
+<li><span class="tbd">TODO: eFoil experience — years riding, lessons taught to date</span></li>
+</ul>
+<p class="assure-note">These are the credentials that actually matter for a powered water sport, so they get listed here in full — with real numbers — before booking opens. No hand-waving.</p>
+</div>
+
 </div>
 </section>
 
